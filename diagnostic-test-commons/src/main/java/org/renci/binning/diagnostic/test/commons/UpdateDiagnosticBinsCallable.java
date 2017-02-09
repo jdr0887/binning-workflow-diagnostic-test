@@ -2,10 +2,10 @@ package org.renci.binning.diagnostic.test.commons;
 
 import org.renci.binning.core.BinningException;
 import org.renci.binning.core.grch37.diagnostic.AbstractUpdateDiagnosticBinsCallable;
-import org.renci.binning.dao.BinningDAOBeanService;
-import org.renci.binning.dao.BinningDAOException;
-import org.renci.binning.dao.clinbin.model.DiagnosticBinningJob;
-import org.renci.binning.dao.jpa.BinningDAOManager;
+import org.renci.canvas.dao.CANVASDAOBeanService;
+import org.renci.canvas.dao.CANVASDAOException;
+import org.renci.canvas.dao.clinbin.model.DiagnosticBinningJob;
+import org.renci.canvas.dao.jpa.CANVASDAOManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +13,7 @@ public class UpdateDiagnosticBinsCallable extends AbstractUpdateDiagnosticBinsCa
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateDiagnosticBinsCallable.class);
 
-    public UpdateDiagnosticBinsCallable(BinningDAOBeanService daoBean, DiagnosticBinningJob binningJob) {
+    public UpdateDiagnosticBinsCallable(CANVASDAOBeanService daoBean, DiagnosticBinningJob binningJob) {
         super(daoBean, binningJob);
     }
 
@@ -25,11 +25,11 @@ public class UpdateDiagnosticBinsCallable extends AbstractUpdateDiagnosticBinsCa
 
     public static void main(String[] args) {
         try {
-            BinningDAOManager daoMgr = BinningDAOManager.getInstance();
+            CANVASDAOManager daoMgr = CANVASDAOManager.getInstance();
             DiagnosticBinningJob binningJob = daoMgr.getDAOBean().getDiagnosticBinningJobDAO().findById(4218);
             UpdateDiagnosticBinsCallable callable = new UpdateDiagnosticBinsCallable(daoMgr.getDAOBean(), binningJob);
             callable.call();
-        } catch (BinningDAOException | BinningException e) {
+        } catch (CANVASDAOException | BinningException e) {
             e.printStackTrace();
         }
     }

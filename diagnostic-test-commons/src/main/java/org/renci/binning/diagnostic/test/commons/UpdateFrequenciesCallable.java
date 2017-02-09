@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.renci.binning.core.BinningException;
 import org.renci.binning.core.diagnostic.AbstractUpdateFrequenciesCallable;
-import org.renci.binning.dao.BinningDAOBeanService;
-import org.renci.binning.dao.BinningDAOException;
-import org.renci.binning.dao.clinbin.model.DiagnosticBinningJob;
-import org.renci.binning.dao.clinbin.model.MaxFrequency;
-import org.renci.binning.dao.jpa.BinningDAOManager;
+import org.renci.canvas.dao.CANVASDAOBeanService;
+import org.renci.canvas.dao.CANVASDAOException;
+import org.renci.canvas.dao.clinbin.model.DiagnosticBinningJob;
+import org.renci.canvas.dao.clinbin.model.MaxFrequency;
+import org.renci.canvas.dao.jpa.CANVASDAOManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +16,7 @@ public class UpdateFrequenciesCallable extends AbstractUpdateFrequenciesCallable
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateFrequenciesCallable.class);
 
-    public UpdateFrequenciesCallable(BinningDAOBeanService daoBean, DiagnosticBinningJob binningJob) {
+    public UpdateFrequenciesCallable(CANVASDAOBeanService daoBean, DiagnosticBinningJob binningJob) {
         super(daoBean, binningJob);
     }
 
@@ -29,11 +29,11 @@ public class UpdateFrequenciesCallable extends AbstractUpdateFrequenciesCallable
 
     public static void main(String[] args) {
         try {
-            BinningDAOManager daoMgr = BinningDAOManager.getInstance();
+            CANVASDAOManager daoMgr = CANVASDAOManager.getInstance();
             DiagnosticBinningJob binningJob = daoMgr.getDAOBean().getDiagnosticBinningJobDAO().findById(4218);
             UpdateFrequenciesCallable callable = new UpdateFrequenciesCallable(daoMgr.getDAOBean(), binningJob);
             callable.call();
-        } catch (BinningDAOException | BinningException e) {
+        } catch (CANVASDAOException | BinningException e) {
             e.printStackTrace();
         }
     }

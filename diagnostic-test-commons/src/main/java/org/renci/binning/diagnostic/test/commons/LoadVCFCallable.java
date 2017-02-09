@@ -8,13 +8,13 @@ import java.util.Set;
 import org.apache.commons.collections.CollectionUtils;
 import org.renci.binning.core.BinningException;
 import org.renci.binning.core.diagnostic.AbstractLoadVCFCallable;
-import org.renci.binning.dao.BinningDAOBeanService;
-import org.renci.binning.dao.BinningDAOException;
-import org.renci.binning.dao.clinbin.model.DiagnosticBinningJob;
-import org.renci.binning.dao.jpa.BinningDAOManager;
-import org.renci.binning.dao.ref.model.GenomeRef;
-import org.renci.binning.dao.ref.model.GenomeRefSeq;
-import org.renci.binning.dao.var.model.LocatedVariant;
+import org.renci.canvas.dao.CANVASDAOBeanService;
+import org.renci.canvas.dao.CANVASDAOException;
+import org.renci.canvas.dao.clinbin.model.DiagnosticBinningJob;
+import org.renci.canvas.dao.jpa.CANVASDAOManager;
+import org.renci.canvas.dao.ref.model.GenomeRef;
+import org.renci.canvas.dao.ref.model.GenomeRefSeq;
+import org.renci.canvas.dao.var.model.LocatedVariant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,11 +25,8 @@ public class LoadVCFCallable extends AbstractLoadVCFCallable {
 
     private static final Logger logger = LoggerFactory.getLogger(LoadVCFCallable.class);
 
-    private String binningDirectory;
-
-    public LoadVCFCallable(BinningDAOBeanService daoBean, DiagnosticBinningJob binningJob, String binningDirectory) {
+    public LoadVCFCallable(CANVASDAOBeanService daoBean, DiagnosticBinningJob binningJob) {
         super(daoBean, binningJob);
-        this.binningDirectory = binningDirectory;
     }
 
     @Override
@@ -45,6 +42,17 @@ public class LoadVCFCallable extends AbstractLoadVCFCallable {
     @Override
     public String getStudyName() {
         return "TestStudy";
+    }
+
+    @Override
+    public GenomeRef getGenomeRef() {
+        GenomeRef genomeRef = null;
+        try {
+            genomeRef = getDaoBean().getGenomeRefDAO().findById(2);
+        } catch (CANVASDAOException e) {
+            e.printStackTrace();
+        }
+        return genomeRef;
     }
 
     @Override
@@ -93,11 +101,11 @@ public class LoadVCFCallable extends AbstractLoadVCFCallable {
 
     public static void main(String[] args) {
         try {
-            BinningDAOManager daoMgr = BinningDAOManager.getInstance();
+            CANVASDAOManager daoMgr = CANVASDAOManager.getInstance();
             DiagnosticBinningJob binningJob = daoMgr.getDAOBean().getDiagnosticBinningJobDAO().findById(4218);
-            LoadVCFCallable callable = new LoadVCFCallable(daoMgr.getDAOBean(), binningJob, "/tmp");
+            LoadVCFCallable callable = new LoadVCFCallable(daoMgr.getDAOBean(), binningJob);
             callable.call();
-        } catch (BinningDAOException | BinningException e) {
+        } catch (CANVASDAOException | BinningException e) {
             e.printStackTrace();
         }
     }

@@ -1,7 +1,0 @@
-org.renci.binning.diagnostic.test.commands.AnnotateVariantsAction
-org.renci.binning.diagnostic.test.commands.CreateBinningJobAction
-org.renci.binning.diagnostic.test.commands.GenerateReportAction
-org.renci.binning.diagnostic.test.commands.LoadCoverageAction
-org.renci.binning.diagnostic.test.commands.LoadVCFAction
-org.renci.binning.diagnostic.test.commands.UpdateDiagnosticBinsAction
-org.renci.binning.diagnostic.test.commands.UpdateFrequenciesAction

@@ -1,0 +1,15 @@
+<features name="diagnostic-test-workflow-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0">
+
+  <feature name="diagnostic-test-workflow" version="${project.version}" resolver="(obr)">
+    <bundle>mvn:org.renci.canvas.binning.diagnostic-test-workflow/diagnostic-test-workflow-commons/${project.version}</bundle>
+    <bundle>mvn:org.renci.canvas.binning.diagnostic-test-workflow/diagnostic-test-workflow-commands/${project.version}</bundle>    
+    <bundle>mvn:org.renci.canvas.binning.diagnostic-test-workflow/diagnostic-test-workflow-executor/${project.version}</bundle>
+    <bundle>mvn:org.renci.canvas.binning.diagnostic-test-workflow/diagnostic-test-workflow-ws/${project.version}</bundle>
+  </feature>
+
+</features>
+
+
+
+
+

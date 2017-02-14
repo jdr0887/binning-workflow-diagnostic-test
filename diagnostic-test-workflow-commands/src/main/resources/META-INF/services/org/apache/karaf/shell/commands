@@ -1,0 +1,7 @@
+org.renci.canvas.binning.diagnostic.test.commands.AnnotateVariantsAction
+org.renci.canvas.binning.diagnostic.test.commands.CreateBinningJobAction
+org.renci.canvas.binning.diagnostic.test.commands.GenerateReportAction
+org.renci.canvas.binning.diagnostic.test.commands.LoadCoverageAction
+org.renci.canvas.binning.diagnostic.test.commands.LoadVCFAction
+org.renci.canvas.binning.diagnostic.test.commands.UpdateDiagnosticBinsAction
+org.renci.canvas.binning.diagnostic.test.commands.UpdateFrequenciesAction

@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.renci.binning</groupId>
+    <groupId>org.renci.canvas</groupId>
     <artifactId>binning</artifactId>
-    <version>0.0.35</version>
+    <version>0.0.38</version>
   </parent>
-  <name>Binning :: Workflow :: Diagnostic Test</name>
+  <name>CANVAS :: Binning :: Diagnostic Test Workflow</name>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.renci.binning.workflows</groupId>
-  <artifactId>diagnostic-test</artifactId>
-  <version>0.0.3-SNAPSHOT</version>
+  <groupId>org.renci.canvas.binning</groupId>
+  <artifactId>diagnostic-test-workflow</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <properties>
     <maven.site.plugin.skip>false</maven.site.plugin.skip>    
@@ -33,22 +33,22 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-	<groupId>org.renci.binning.workflows.diagnostic-test</groupId>
-	<artifactId>diagnostic-test-commons</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<groupId>org.renci.canvas.binning.diagnostic-test-workflow</groupId>
+	<artifactId>diagnostic-test-workflow-commons</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
-	<groupId>org.renci.binning.workflows.diagnostic-test</groupId>
-	<artifactId>diagnostic-test-executor</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<groupId>org.renci.canvas.binning.diagnostic-test-workflow</groupId>
+	<artifactId>diagnostic-test-workflow-executor</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
       </dependency>      
     </dependencies>
   </dependencyManagement>  
   <modules>
-    <module>diagnostic-test-features</module>
-    <module>diagnostic-test-commands</module>
-    <module>diagnostic-test-executor</module>
-    <module>diagnostic-test-commons</module>
-    <module>diagnostic-test-ws</module>
+    <module>diagnostic-test-workflow-features</module>
+    <module>diagnostic-test-workflow-commands</module>
+    <module>diagnostic-test-workflow-executor</module>
+    <module>diagnostic-test-workflow-commons</module>
+    <module>diagnostic-test-workflow-ws</module>
   </modules>
 </project>

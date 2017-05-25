@@ -26,6 +26,7 @@
 
     <sequenceFlow sourceRef="join" targetRef="end" />
 
+
     <!-- <serviceTask id="initialize" activiti:class="org.renci.canvas.binning.core.diagnostic.InitializeDelegate" /> -->
     <!-- <serviceTask id="loadVCF" activiti:class="org.renci.canvas.binning.diagnostic.test.executor.LoadVCFDelegate" /> -->
     <!-- <serviceTask id="loadCoverage" activiti:class="org.renci.canvas.binning.diagnostic.test.executor.LoadCoverageDelegate" /> -->

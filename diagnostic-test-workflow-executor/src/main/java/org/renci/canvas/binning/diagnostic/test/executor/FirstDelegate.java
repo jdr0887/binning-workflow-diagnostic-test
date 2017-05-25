@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class FirstDelegate implements JavaDelegate {
 
-    private static final Logger logger = LoggerFactory.getLogger(SecondDelegate.class);
+    private static final Logger logger = LoggerFactory.getLogger(FirstDelegate.class);
 
     public FirstDelegate() {
         super();
@@ -15,7 +15,7 @@ public class FirstDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution arg0) throws Exception {
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < 10000; i++) {
             logger.info("i = {}", i);
         }
     }

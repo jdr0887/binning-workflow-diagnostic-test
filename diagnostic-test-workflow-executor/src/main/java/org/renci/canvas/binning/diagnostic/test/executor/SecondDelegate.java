@@ -15,7 +15,7 @@ public class SecondDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution arg0) throws Exception {
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < 10000; i++) {
             logger.info("i = {}", i);
         }
     }

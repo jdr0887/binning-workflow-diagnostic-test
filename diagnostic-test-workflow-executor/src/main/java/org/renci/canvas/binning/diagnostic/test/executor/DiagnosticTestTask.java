@@ -41,7 +41,7 @@ public class DiagnosticTestTask implements Runnable {
             ServiceReference<RuntimeService> runtimeServiceReference = bundleContext.getServiceReference(RuntimeService.class);
             RuntimeService runtimeService = bundleContext.getService(runtimeServiceReference);
 
-            repositoryService.createDeployment().addClasspathResource("org/renci/binning/diagnostic/test/executor/test.bpmn20.xml")
+            repositoryService.createDeployment().addClasspathResource("org/renci/canvas/binning/diagnostic/test/executor/test.bpmn20.xml")
                     .deploy();
 
             Map<String, Object> variables = new HashMap<String, Object>();

@@ -29,11 +29,11 @@ public class DiagnosticTestServiceTest {
         provider.setMapper(mapper);
         providers.add(provider);
 
-        String restServiceURL = String.format("http://%1$s:%2$d/cxf/%3$s/%3$sService", "localhost", 8181, "DiagnosticTest");
+        String restServiceURL = String.format("http://%1$s:%2$d/cxf/%3$s/%3$sService", "152.54.3.113", 8181, "DiagnosticTest");
 
         WebClient client = WebClient.create(restServiceURL, providers).type(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
 
-        DiagnosticBinningJobInfo info = new DiagnosticBinningJobInfo("jdr-test", "M", 46, 40);
+        DiagnosticBinningJobInfo info = new DiagnosticBinningJobInfo("jdr-test-new", "M", 52, 43);
         Response response = client.path("submit").post(info);
         String id = response.readEntity(String.class);
         System.out.println(id);

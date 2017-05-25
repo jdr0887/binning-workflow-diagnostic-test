@@ -12,6 +12,7 @@ import org.renci.canvas.dao.CANVASDAOBeanService;
 import org.renci.canvas.dao.CANVASDAOException;
 import org.renci.canvas.dao.clinbin.model.DX;
 import org.renci.canvas.dao.clinbin.model.DiagnosticBinningJob;
+import org.renci.canvas.dao.clinbin.model.DiagnosticResultVersion;
 import org.renci.canvas.dao.clinbin.model.DiagnosticStatusType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,9 +38,13 @@ public class DiagnosticTestServiceImpl implements DiagnosticTestService {
             binningJob.setStudy("TEST");
             binningJob.setGender(info.getGender());
             binningJob.setParticipant(info.getParticipant());
-            binningJob.setListVersion(info.getListVersion());
+            DiagnosticResultVersion diagnosticResultVersion = daoBeanService.getDiagnosticResultVersionDAO()
+                    .findById(Integer.valueOf(info.getListVersion()));
+            logger.info(diagnosticResultVersion.toString());
+            binningJob.setDiagnosticResultVersion(diagnosticResultVersion);
             binningJob.setStatus(daoBeanService.getDiagnosticStatusTypeDAO().findById("Requested"));
-            DX dx = daoBeanService.getDXDAO().findById(info.getDxId());
+            DX dx = daoBeanService.getDXDAO().findById(Integer.valueOf(info.getDxId()));
+            logger.info(dx.toString());
             binningJob.setDx(dx);
             List<DiagnosticBinningJob> foundBinningJobs = daoBeanService.getDiagnosticBinningJobDAO().findByExample(binningJob);
             if (CollectionUtils.isNotEmpty(foundBinningJobs)) {

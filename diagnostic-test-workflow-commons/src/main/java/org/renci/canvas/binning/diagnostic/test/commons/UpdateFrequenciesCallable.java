@@ -1,13 +1,10 @@
 package org.renci.canvas.binning.diagnostic.test.commons;
 
-import java.util.List;
-
 import org.renci.canvas.binning.core.BinningException;
 import org.renci.canvas.binning.core.diagnostic.AbstractUpdateFrequenciesCallable;
 import org.renci.canvas.dao.CANVASDAOBeanService;
 import org.renci.canvas.dao.CANVASDAOException;
 import org.renci.canvas.dao.clinbin.model.DiagnosticBinningJob;
-import org.renci.canvas.dao.clinbin.model.MaxFrequency;
 import org.renci.canvas.dao.jpa.CANVASDAOManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +18,7 @@ public class UpdateFrequenciesCallable extends AbstractUpdateFrequenciesCallable
     }
 
     @Override
-    public List<MaxFrequency> call() throws BinningException {
+    public Void call() throws BinningException {
         logger.info("ENTERING call()");
 
         return null;

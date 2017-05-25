@@ -111,18 +111,27 @@ public class LoadCoverageCallable extends AbstractLoadCoverageCallable {
                         }
 
                     }
-                    gatkDepthInterval.setTotalCoverage(total);
-                    gatkDepthInterval
-                            .setAverageCoverage(Double.valueOf(1D * gatkDepthInterval.getTotalCoverage() / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove1(Double.valueOf(100D * percentageMap.get(1) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove2(Double.valueOf(100D * percentageMap.get(2) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove5(Double.valueOf(100D * percentageMap.get(5) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove8(Double.valueOf(100D * percentageMap.get(8) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove10(Double.valueOf(100D * percentageMap.get(10) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove15(Double.valueOf(100D * percentageMap.get(15) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove20(Double.valueOf(100D * percentageMap.get(20) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove30(Double.valueOf(100D * percentageMap.get(30) / gatkDepthInterval.getLength()));
-                    gatkDepthInterval.setSamplePercentAbove50(Double.valueOf(100D * percentageMap.get(50) / gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setTotalCoverage(total);
+                    // gatkDepthInterval
+                    // .setAverageCoverage(Double.valueOf(1D * gatkDepthInterval.getTotalCoverage() / gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove1(Double.valueOf(100D * percentageMap.get(1) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove2(Double.valueOf(100D * percentageMap.get(2) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove5(Double.valueOf(100D * percentageMap.get(5) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove8(Double.valueOf(100D * percentageMap.get(8) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove10(Double.valueOf(100D * percentageMap.get(10) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove15(Double.valueOf(100D * percentageMap.get(15) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove20(Double.valueOf(100D * percentageMap.get(20) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove30(Double.valueOf(100D * percentageMap.get(30) /
+                    // gatkDepthInterval.getLength()));
+                    // gatkDepthInterval.setSamplePercentAbove50(Double.valueOf(100D * percentageMap.get(50) /
+                    // gatkDepthInterval.getLength()));
 
                 });
             }

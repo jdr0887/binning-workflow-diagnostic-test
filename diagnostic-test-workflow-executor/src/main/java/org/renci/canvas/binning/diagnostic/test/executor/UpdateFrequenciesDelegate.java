@@ -50,16 +50,16 @@ public class UpdateFrequenciesDelegate implements JavaDelegate {
             daoBean.getDiagnosticBinningJobDAO().save(binningJob);
             logger.info(binningJob.toString());
 
-            List<MaxFrequency> results = Executors.newSingleThreadExecutor().submit(new UpdateFrequenciesCallable(daoBean, binningJob))
-                    .get();
-
-            if (CollectionUtils.isNotEmpty(results)) {
-                logger.info(String.format("saving %d new MaxFrequency instances", results.size()));
-                for (MaxFrequency maxFrequency : results) {
-                    logger.info(maxFrequency.toString());
-                    daoBean.getMaxFrequencyDAO().save(maxFrequency);
-                }
-            }
+            // List<MaxFrequency> results = Executors.newSingleThreadExecutor().submit(new UpdateFrequenciesCallable(daoBean, binningJob))
+            // .get();
+            //
+            // if (CollectionUtils.isNotEmpty(results)) {
+            // logger.info(String.format("saving %d new MaxFrequency instances", results.size()));
+            // for (MaxFrequency maxFrequency : results) {
+            // logger.info(maxFrequency.toString());
+            // daoBean.getMaxFrequencyDAO().save(maxFrequency);
+            // }
+            // }
 
             binningJob = daoBean.getDiagnosticBinningJobDAO().findById(binningJobId);
             binningJob.setStatus(daoBean.getDiagnosticStatusTypeDAO().findById("Updated frequency table"));

@@ -15,6 +15,7 @@ public class FirstDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution arg0) throws Exception {
+        logger.info("asyncExeuctorActive(): {}", arg0.getEngineServices().getProcessEngineConfiguration().isAsyncExecutorActivate());
         for (int i = 0; i < 10000; i++) {
             logger.info("i = {}", i);
         }

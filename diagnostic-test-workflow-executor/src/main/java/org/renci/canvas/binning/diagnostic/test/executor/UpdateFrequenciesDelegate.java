@@ -1,21 +1,16 @@
 package org.renci.canvas.binning.diagnostic.test.executor;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Executors;
 
-import org.activiti.engine.delegate.DelegateExecution;
-import org.activiti.engine.delegate.JavaDelegate;
-import org.apache.commons.collections4.CollectionUtils;
+import org.flowable.engine.delegate.DelegateExecution;
+import org.flowable.engine.delegate.JavaDelegate;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
-import org.renci.canvas.binning.diagnostic.test.commons.UpdateFrequenciesCallable;
 import org.renci.canvas.dao.CANVASDAOBeanService;
 import org.renci.canvas.dao.CANVASDAOException;
 import org.renci.canvas.dao.clinbin.model.DiagnosticBinningJob;
-import org.renci.canvas.dao.clinbin.model.MaxFrequency;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,7 +23,7 @@ public class UpdateFrequenciesDelegate implements JavaDelegate {
     }
 
     @Override
-    public void execute(DelegateExecution execution) throws Exception {
+    public void execute(DelegateExecution execution) {
         logger.debug("ENTERING execute(DelegateExecution)");
 
         Map<String, Object> variables = execution.getVariables();
